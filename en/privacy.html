@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy — Waytale</title>
+    <meta
+      name="description"
+      content="Privacy policy of the Waytale app: what data it records, where it is stored and how to delete it." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://dymvhub.github.io/way-tale-pub/en/privacy.html" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://dymvhub.github.io/way-tale-pub/en/privacy.html" />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://dymvhub.github.io/way-tale-pub/ru/privacy.html" />
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="apple-touch-icon" href="../logo.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Waytale — home">
+        <span class="logo-tile"><img src="../logo.png" width="40" height="40" alt="" /></span>
+        <span class="brand-name">Waytale</span>
+      </a>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="../ru/privacy.html" hreflang="ru" lang="ru">RU</a>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <span class="lang-current" lang="en" aria-current="page">EN</span>
+      </nav>
+    </header>
+    <main>
+      <h1>Privacy policy</h1>
+      <h2>Contact</h2>
+      <p><a href="mailto:comeahead.dev@gmail.com">comeahead.dev@gmail.com</a></p>
+      <h2>What the app does</h2>
+      <p>
+        Waytale records your location continuously in the background, also when the app is closed.
+        From the recording it opens a "fog of war" map and draws your path by day. The recording is
+        stored on your phone in a local database. Local data is not included in the phone's cloud
+        backups (Android Auto Backup is off).
+      </p>
+      <h2>Without sign-in</h2>
+      <p>
+        Without signing in, and with sync off, location data does not leave your phone (except map
+        requests, see below). Sync is off by default on new installs.
+      </p>
+      <h2>Sign-in and account</h2>
+      <p>
+        Sign-in is only with Google. From Google the app gets your name, email and profile photo
+        URL. Friends never see your email or account id, only the name you chose.
+      </p>
+      <h2>Sync</h2>
+      <p>
+        With sync on, your account on Supabase servers (Postgres) stores explored areas, the daily
+        path, daily statistics and visited cities. If "Record the path you walked" is off, the path
+        is not recorded at all, only explored areas. Only the account owner can access this data
+        (row-level security).
+      </p>
+      <h2>Friends and live location</h2>
+      <ul>
+        <li>Friends are added only with an invitation code. There are no public profiles.</li>
+        <li>
+          A friend sees your path only for the days (or a part of a day) you explicitly shared. You
+          can revoke sharing. If you delete a day's path, it is also removed for the friend.
+        </li>
+        <li>
+          Live location goes only to the friends you choose, for the time you choose. The server
+          keeps only the last point, no history; it is deleted when the time ends.
+        </li>
+      </ul>
+      <h2>Notifications</h2>
+      <p>
+        Push notifications use Firebase Cloud Messaging (Google). The device push token is stored on
+        the server. A push contains only a friend's name and dates, no places.
+      </p>
+      <h2>Analytics</h2>
+      <p>
+        We use Firebase Analytics (Google): which screens are opened and which actions are taken.
+        Analytics gets no coordinates, path data, friends' names, email or account id. Detailed
+        location and device data and Google signals are turned off. Data is kept for 2 months. The
+        advertising ID is not collected. There are no ads.
+      </p>
+      <h2>Crash reports</h2>
+      <p>
+        Sentry (EU region) receives error details, device model, OS version, language and time zone.
+        Coordinates are filtered out, IP addresses are not stored, there are no screenshots.
+      </p>
+      <h2>Map and cities</h2>
+      <p>
+        Map images are loaded from OpenFreeMap (based on OpenStreetMap). Like with any online map,
+        the server sees which map area is requested and your IP address. City borders are downloaded
+        from Cloudflare R2 storage as files for areas about 70 km across, without any identifiers.
+      </p>
+      <h2>Import from Google Timeline</h2>
+      <p>The file is processed only on the phone, never uploaded, and not kept after import.</p>
+      <h2>Permissions</h2>
+      <ul>
+        <li>Location "while using" and "all the time": for background recording.</li>
+        <li>Physical activity: to tell movement from rest and save battery.</li>
+        <li>
+          Notifications: the live location sharing notice and friends' pushes. Everything works
+          without this permission.
+        </li>
+      </ul>
+      <h2>Selling data</h2>
+      <p>We do not sell data and do not share it for advertising.</p>
+      <h2>How data is protected</h2>
+      <ul>
+        <li>
+          All data between the app and the servers (Supabase, Firebase, Sentry, map and city files)
+          goes over an encrypted connection (HTTPS).
+        </li>
+        <li>
+          On the server, the data of an account is available only to that account (row-level
+          security). Friends get access only to what you explicitly shared with them.
+        </li>
+        <li>The sign-in session is kept in the phone's protected storage.</li>
+        <li>
+          Data on the phone lives in the app's private storage, other apps have no access to it.
+        </li>
+        <li>Coordinates are filtered out of crash reports and are never sent to analytics.</li>
+      </ul>
+      <h2>How long data is kept</h2>
+      <ul>
+        <li>On the phone: until you delete it (or remove the app).</li>
+        <li>
+          In the account on the server: until you delete it or delete the account. The line of a
+          deleted day's path is erased from the server at once; only a mark that the day was deleted
+          remains.
+        </li>
+        <li>Live location: only the last point, deleted when the chosen time ends.</li>
+        <li>Push token: removed on sign-out and with the account.</li>
+        <li>Analytics: 2 months.</li>
+        <li>Crash reports: no longer than 90 days.</li>
+        <li>
+          After account deletion nothing is kept on purpose. Copies may remain in the server's
+          backups for up to 7 days, then they disappear.
+        </li>
+      </ul>
+      <h2>Deleting data</h2>
+      <p>How to delete your data and account: <a href="delete-account.html">deletion page</a>.</p>
+      <h2>Children</h2>
+      <p>The app is not intended for children under 13.</p>
+      <!-- owner: confirm -->
+      <h2>Changes</h2>
+      <p>Changes to this policy are published on this page with a new date.</p>
+    </main>
+    <footer class="site-footer">
+      <p>Last updated: 5 November 2026</p>
+      <p>Contact: <a href="mailto:comeahead.dev@gmail.com">comeahead.dev@gmail.com</a></p>
+    </footer>
+  </body>
+</html>
